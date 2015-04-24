@@ -3,6 +3,7 @@
 		<link rel="stylesheet" type="text/css" href="./css/foundation.min.css">
 		<link rel="stylesheet" type="text/css" href="./css/normalize.css">
     <script src="./js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" type="text/css" href="./css/index.css">
     
 	</head>
 
@@ -11,14 +12,15 @@
 
     <div class="row">
       <div class="large-3 columns">
-        <h1><img src="http://placehold.it/400x100&text=Logo"></h1>
+        <h1 class="logo"><img src="images/logo.png"></h1>
       </div>
       <div class="large-9 columns">
         <ul class="button-group right">
-          <li><a href="#" class="button">Link 1</a></li>
-          <li><a href="#" class="button">Link 2</a></li>
-          <li><a href="#" class="button">Link 3</a></li>
-          <li><a href="#" class="button">Link 4</a></li>
+          <li><a href="index.html" class="button">Home</a></li>
+          <li><a href="pages/explore.html" class="button">Explore</a></li>
+          <li><a href="pages/vote.html" class="button">Vote</a></li>
+          <li><a href="pages/register.html" class="button">Register</a></li>
+          <li><a href="pages/signIn.html" class="button">Sign In</a></li>
         </ul>
       </div>
     </div>
@@ -29,8 +31,15 @@
      
    
     <div class="row">
-      <div class="large-12 columns">
-        <img src="http://placehold.it/1000x400&text=[img]">
+      <div class="large-8 columns" align="center">
+        <img src="images/main.png" id="mainphoto">
+   
+        <hr>
+      </div>
+      <div class="large-4 columns">
+        <h2> What is uVote? </h2>
+        <p> uVote is an online voting application, that allows registered voters to create, explore, and vote for candidates in upcoming elections. From small polls, to presidential. Join the dozens of other users today!</p>
+          <p><a href="pages/register.html" id="bigbutton" class="round button">Start Voting Today!</a></p>
    
         <hr>
       </div>
@@ -42,10 +51,12 @@
         <img src="http://placehold.it/400x300&text=[img]">
       </div>
       <div class="large-8 columns">
-        <h4>This is a content section.</h4>
+        <h3>Why uVote?</h3>
         <div class="row">
           <div class="large-6 columns">
-            <p>Bacon ipsum dolor sit amet nulla ham qui sint exercitation eiusmod commodo, chuck duis velit. Aute in reprehenderit, dolore aliqua non est magna in labore pig pork biltong. Eiusmod swine spare ribs reprehenderit culpa. Boudin aliqua adipisicing rump corned beef.</p>
+            <p>uVote is going to change the way elections are held. One of the largest problems it tackles is the declining voter turnout rate, where only 62.3% of registered voters participated in the 2008 election, and 57.5% in 2012. </p>
+            <p><a href="http://bipartisanpolicy.org/library/2012-voter-turnout/">
+            Statistics provided by The Bipartisan Policy Center</a> </p>
           </div>
           <div class="large-6 columns">
             <p>Pork drumstick turkey fugiat. Tri-tip elit turducken pork chop in. Swine short ribs meatball irure bacon nulla pork belly cupidatat meatloaf cow. Nulla corned beef sunt ball tip, qui bresaola enim jowl. Capicola short ribs minim salami nulla nostrud pastrami.</p>
@@ -78,7 +89,8 @@
         <hr/>
         <div class="row">
           <div class="large-6 columns">
-            <p>© Copyright no one at all. Go to town.</p>
+            <p>© Copyright: uVote. All rights reserved</p>
+            <p>By: Peter Matla, Zach Minster, Conrad Tyson, David Ivey</p>
           </div>
           <div class="large-6 columns">
             <ul class="inline-list right">

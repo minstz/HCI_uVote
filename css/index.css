@@ -1,0 +1,26 @@
+#bigbutton {
+	width: 6em;
+	height: 5.22em;
+	font-size: 3em;
+	text-align: center;
+	font-style: italic;
+	color: red;
+}
+
+#bigbutton:hover {
+	background-color: red;
+	color: blue;
+}
+
+#mainphoto {
+	border-radius: 1em;
+}
+body {
+  background: #F0F0F3;
+}
+.login-box {
+  background: #fff;
+  border: 1px solid #ddd; 
+  margin: 100px 0;
+  padding: 40px 20px 0 20px;
+}
