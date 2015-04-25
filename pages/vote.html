@@ -2,7 +2,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="../css/foundation.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-    <script src="./js/vendor/modernizr.js"></script>
+    <script src="../js/vendor/modernizr.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     
 	</head>
@@ -23,15 +23,20 @@
       </div>
     </div>
     <hr>
+
    
-    <form>
+    <form name="voteForm" id="voteForm">
       <fieldset class="large-6 small-8 small-centered large-centered columns">   
         <legend>Presidential Election</legend>
-          <input type="radio" name="choice">Candidate 1 <img src="http://placehold.it/100x100&text=candidate1"/> <a href="#">Information about candidate</a> <br/>
-          <input type="radio" name="choice">Candidate 2 <img src="http://placehold.it/100x100&text=candidate2"/> <a href="#">Information about candidate</a> <br/>
-          <input type="radio" name="choice">Candidate 3 <img src="http://placehold.it/100x100&text=candidate3"/> <a href="#">Information about candidate</a> <br/>
-          <input type="radio" name="choice">Candidate 4 <img src="http://placehold.it/100x100&text=candidate4"/> <a href="#">Information about candidate</a> <br/>
-          <input type="radio" name="choice">Write in <input type="text" />
+          <input type="radio" name="choice" value="Candidate 1">Candidate 1 <img src="http://placehold.it/100x100&text=candidate1"/> <a href="#">Information about candidate</a> <br/>
+          <input type="radio" name="choice" value="Candidate 2">Candidate 2 <img src="http://placehold.it/100x100&text=candidate2"/> <a href="#">Information about candidate</a> <br/>
+          <input type="radio" name="choice" value="Candidate 3">Candidate 3 <img src="http://placehold.it/100x100&text=candidate3"/> <a href="#">Information about candidate</a> <br/>
+          <input type="radio" name="choice" value="Candidate 4">Candidate 4 <img src="http://placehold.it/100x100&text=candidate4"/> <a href="#">Information about candidate</a> <br/>
+          <input type="radio" name="choice" value="Write in">Write in <input name="name" type="text" placeholder="Check the write-in bubble, then type the name here"/>
+          <input type="radio" name="choice" value="No Confidence">No Confidence<br/>
+
+
+          <input type="button" onclick="voteFunc()" value="Vote!">
       </fieldset>
     </form>   
    
@@ -57,8 +62,27 @@
 
 
 
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/foundation.min.js"></script>
+    <script type="text/javascript">
+    function voteFunc() {
+      var choice = $('input[name=choice]:checked', '#voteForm').val();
+      if (choice == "Write in") {
+        choice = $('input[name=name]', '#voteForm').val();
+      }
+
+      if (choice == "") {
+        alert("Please Fill in the Text area with your Write In");
+      }
+      else {
+        var result = confirm("Are you sure you want to vote for " + choice + "?")
+        if (result == true) {
+          window.location.assign("./thankYou.html");
+        }
+      }
+    }
+
+    </script>
     <script>
       $(document).foundation();
     </script>
