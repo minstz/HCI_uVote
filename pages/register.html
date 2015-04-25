@@ -2,7 +2,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="../css/foundation.min.css">
 		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
-    <script src="./js/vendor/modernizr.js"></script>
+    <script src="../js/vendor/modernizr.js"></script>
     <link rel="stylesheet" type="text/css" href="../css/index.css">
     
 	</head>
@@ -10,7 +10,7 @@
 	<body>
     <div class="row">
       <div class="large-3 columns">
-        <h1><img src="../images/logo.png"></h1>
+        <img src="../images/logo.png">
       </div>
       <div class="large-9 columns">
         <ul class="button-group right">
@@ -22,78 +22,48 @@
         </ul>
       </div>
     </div>
+    <hr>
 
 
-    <form>
-  <div class="row">
-    <div class="large-12 columns">
-      <h2> Register a new account with uVote </h2>
-    </div>
-    <div class="large-12 columns">
-      <label>Input Label
-        <input type="text" placeholder="large-12.columns" />
-      </label>
-    </div>
-  </div>
-  <div class="row">
-    <div class="large-4 columns">
-      <label>Input Label
-        <input type="text" placeholder="large-4.columns" />
-      </label>
-    </div>
-    <div class="large-4 columns">
-      <label>Input Label
-        <input type="text" placeholder="large-4.columns" />
-      </label>
-    </div>
-    <div class="large-4 columns">
-      <div class="row collapse">
-        <label>Input Label</label>
-        <div class="small-9 columns">
-          <input type="text" placeholder="small-9.columns" />
-        </div>
-        <div class="small-3 columns">
-          <span class="postfix">.com</span>
-        </div>
+  <form id="regform" name="reform">
+    <fieldset class="large-6 small-8 small-centered large-centered columns">
+    <legend>Register For uVote!</legend>
+    <div class="row">
+      <div class="small-12 columns">
+        <input type="email" placeholder="Email" autofocus>
       </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Select Box
-        <select>
-          <option value="husker">Husker</option>
-          <option value="starbuck">Starbuck</option>
-          <option value="hotdog">Hot Dog</option>
-          <option value="apollo">Apollo</option>
-        </select>
-      </label>
+    <div class="row">
+      <div class="small-12 columns">
+        <input type="text" placeholder="Social Security NUmber">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="large-6 columns">
-      <label>Choose Your Favorite</label>
-      <input type="radio" name="pokemon" value="Red" id="pokemonRed"><label for="pokemonRed">Red</label>
-      <input type="radio" name="pokemon" value="Blue" id="pokemonBlue"><label for="pokemonBlue">Blue</label>
+    <div class="row">
+      <div class="small-12 columns">
+        <input type="text" placeholder="Voter ID number">
+      </div>
     </div>
-    <div class="large-6 columns">
-      <label>Check these out</label>
-      <input id="checkbox1" type="checkbox"><label for="checkbox1">Checkbox 1</label>
-      <input id="checkbox2" type="checkbox"><label for="checkbox2">Checkbox 2</label>
+    <div class="row">  
+      <div class="small-12 columns">
+        <input type="password" placeholder="Password">
+      </div>
     </div>
-  </div>
-  <div class="row">
-    <div class="large-12 columns">
-      <label>Textarea Label
-        <textarea placeholder="small-12.columns"></textarea>
-      </label>
+    <div class="row">
+      <div class="small-12 columns">
+        <input type="password" placeholder="Confirm Password">
+      </div>
     </div>
-  </div>
-</form>
+    <div class="row"> 
+      <div class="small-8 columns">
+        <input type="button" value="Submit" onclick="goHome()">
+      </div>
+    </div>
+    </fieldset>
+  </form>
 
   <div class="row">
-    <div class="large-12 columns">
-      <h1> Already an Existing User </h1>
+    <div class="large-12 large-centered columns signIn">
+      <h1> Already an Existing User? </h1>
       <a href="signIn.html" class="button">Sign In</a>
     </div>
   </div>
@@ -121,9 +91,15 @@
     </footer>
 
 
-
-    <script src="js/vendor/jquery.js"></script>
-    <script src="js/foundation.min.js"></script>
+    <script>
+    function goHome() {
+      alert("Account Created! Please login now");
+      window.location.assign("./signIn.html");
+    }
+    </script>
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/site.js"></script>
+    <script src="../js/foundation.min.js"></script>
     <script>
       $(document).foundation();
     </script>
