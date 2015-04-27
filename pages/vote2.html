@@ -1,0 +1,90 @@
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="../css/foundation.min.css">
+		<link rel="stylesheet" type="text/css" href="../css/normalize.css">
+    <script src="../js/vendor/modernizr.js"></script>
+    <link rel="stylesheet" type="text/css" href="../css/index.css">
+    
+	</head>
+
+	<body>
+    <div class="row">
+      <div class="large-3 columns">
+        <img src="../images/logo.png">
+      </div>
+      <div class="large-9 columns">
+        <ul class="button-group right">
+          <li><a href="../index.html" class="button">Home</a></li>
+          <li><a href="explore.html" class="button">Explore</a></li>
+          <li><a href="vote.html" class="button">Vote</a></li>
+          <li><a href="register.html" class="button">Register</a></li>
+          <li><a href="signIn.html" class="button">Sign In</a></li>
+        </ul>
+      </div>
+    </div>
+    <hr>
+
+   
+    <form name="voteForm" id="voteForm">
+      <fieldset class="large-6 small-8 small-centered large-centered columns">   
+        <legend>Presidential Election</legend>
+          <input type="radio" name="choice" value="Candidate 1">Lincoln Davenport <img src="http://upload.wikimedia.org/wikipedia/commons/3/36/Lincoln_Chafee_official_portrait.jpg&text=Candidate 1"/> <a href="#">Lincoln Davenport Chafee has the distinction of serving as a mayor, governor, and United States Senator. First elected to public office in 1985 as a Delegate to the Rhode Island Constitutional Convention, he served on the Warwick City Council from 1986 to 1990. Chafee was the only Republican in the Senate to vote against authorizing the use of military force in Iraq. From 2007 to 2009, Chafee was a Distinguished Visiting Fellow at Brown University’s Watson Institute for International Studies.</a> <br/>
+          <input type="radio" name="choice" value="Candidate 2">John Bolton <img src="http://media.washtimes.com.s3.amazonaws.com/media/image/2010/11/24/20101124-192036-pic-105718094.jpg&text=Candidate 2"/> <a href="#">Ambassador John Bolton was born in Baltimore, MD. He graduated with a B.A., summa cum laude, Phi Beta Kappa, from Yale University and received his J.D. in 1974. A diplomat and a lawyer, has spent many years in public service. He served as the U.S. Permanent Representative to the United Nations in 2005-2006. He was Under Secretary of State for Arms Control and International Security from 2001 to 2005. In the Reagan Administration, he was an Assistant Attorney General.</a> <br/>
+          <input type="radio" name="choice" value="Candidate 3">Joe Biden <img src="http://static1.1.sqspcdn.com/static/f/360296/22502132/1366471566340/Getty_100912_JoeBiden.jpg?token=JBfKvY1uaydV89OpZEtZ7v4sAYM%3D&text=Candidate 3"/> <a href="#">As a Senator from Delaware for 36 years, Senator Biden established himself as a leader on some of our nation's most important domestic and international challenges. As Chairman or Ranking Member of the Senate Judiciary Committee for 17 years, then-Senator Biden was widely recognized for his work on criminal justice issues including the landmark 1994 Crime Bill and the Violence Against Women Act. Now, as the 47th Vice President of the United States, Joe Biden has continued his leadership on important issues facing the nation. </a> <br/>
+          <input type="radio" name="choice" value="Candidate 4">Waka Flocka Flame <img src="https://pbs.twimg.com/profile_images/590971877796880384/XVPLeOeU.jpg&text=Candidate 4"/> <a href="#">Waka Flocka, also known as Waka Flocka Flame, is a Southern rapper associated with Gucci Mane and his So Icey Entertainment enterprise. Born Juaquin Malphurs on May 31, 1986, in Jamaica, Queens, New York, he moved to Riverdale, Georgia, at age nine and later based himself in Atlanta, Georgia, where he launched his rap career. On April 20, 2015, Waka Flocka announced his candidacy for a U.S. Presidential run in 2016, via a video exclusive for Rolling Stone, in which he showed off a signed document to prove that he's serious. If he wins, the rapper says he will legalize marijuana, outlaw dogs (and other animals) in restaurants, and ban people with big feet from using the sidewalk.</a> <br/>
+          <input type="radio" name="choice" value="Write in">Write in <input name="name" type="text" placeholder="Check the write-in bubble, then type the name here"/>
+          <input type="radio" name="choice" value="No Confidence">No Confidence<br/>
+
+
+          <input type="button" onclick="voteFunc()" value="Vote!">
+      </fieldset>
+    </form>   
+   
+    <footer class="row">
+      <div class="large-12 columns">
+        <hr/>
+        <div class="row">
+          <div class="large-6 columns">
+            <p>© Copyright: uVote. All rights reserved</p>
+            <p>By: Peter Matla, Zach Minster, Conrad Tyson, David Ivey</p>
+          </div>
+          <div class="large-6 columns">
+            <ul class="inline-list right">
+              <li><a href="#">Link 1</a></li>
+              <li><a href="#">Link 2</a></li>
+              <li><a href="#">Link 3</a></li>
+              <li><a href="#">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+
+
+    <script src="../js/vendor/jquery.js"></script>
+    <script src="../js/foundation.min.js"></script>
+    <script type="text/javascript">
+    function voteFunc() {
+      var choice = $('input[name=choice]:checked', '#voteForm').val();
+      if (choice == "Write in") {
+        choice = $('input[name=name]', '#voteForm').val();
+      }
+
+      if (choice == "") {
+        alert("Please Fill in the Text area with your Write In");
+      }
+      else {
+        var result = confirm("Are you sure you want to vote for " + choice + "?")
+        if (result == true) {
+          window.location.assign("./thankYou.html");
+        }
+      }
+    }
+
+    </script>
+    <script>
+      $(document).foundation();
+    </script>
+	</body>
+</html>
