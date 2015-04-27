@@ -10,13 +10,13 @@
 	<body>
     <div class="row">
       <div class="large-3 columns">
-        <img src="../images/logo.png">
+        <img src="../images/logo.png" onClick="window.location.assign('../index.html')" onmouseover="style.cursor = 'pointer'">
       </div>
       <div class="large-9 columns">
         <ul class="button-group right">
           <li><a href="../index.html" class="button">Home</a></li>
           <li><a href="explore.html" class="button">Explore</a></li>
-          <li><a href="vote.html" class="button">Vote</a></li>
+          <li><a href="vote.html" class="button activebutton">Vote</a></li>
           <li><a href="register.html" class="button">Register</a></li>
           <li><a href="signIn.html" class="button">Sign In</a></li>
         </ul>
@@ -27,16 +27,21 @@
    
     <form name="voteForm" id="voteForm">
       <fieldset class="large-6 small-8 small-centered large-centered columns">   
-        <legend>Presidential Election</legend>
-          <input type="radio" name="choice" value="Candidate 1">Candidate 1 <img src="http://placehold.it/100x100&text=candidate1"/> <a href="#">Information about candidate</a> <br/>
-          <input type="radio" name="choice" value="Candidate 2">Candidate 2 <img src="http://placehold.it/100x100&text=candidate2"/> <a href="#">Information about candidate</a> <br/>
-          <input type="radio" name="choice" value="Candidate 3">Candidate 3 <img src="http://placehold.it/100x100&text=candidate3"/> <a href="#">Information about candidate</a> <br/>
-          <input type="radio" name="choice" value="Candidate 4">Candidate 4 <img src="http://placehold.it/100x100&text=candidate4"/> <a href="#">Information about candidate</a> <br/>
-          <input type="radio" name="choice" value="Write in">Write in <input name="name" type="text" placeholder="Check the write-in bubble, then type the name here"/>
-          <input type="radio" name="choice" value="No Confidence">No Confidence<br/>
+        <legend>Presidential Election 2016</legend>
+          <input type="radio" id="John" name="choice" value="John Bolton"> <label for="John">John Bolton <img src="../images/John.jpg" height="200" width="200"/></label> 
+            <p>Ambassador John Bolton was born in Baltimore, MD. He graduated with a B.A., summa cum laude, Phi Beta Kappa, from Yale University and received his J.D. in 1974. A diplomat and a lawyer, has spent many years in public service. He served as the U.S. Permanent Representative to the United Nations in 2005-2006. He was Under Secretary of State for Arms Control and International Security from 2001 to 2005. In the Reagan Administration, he was an Assistant Attorney General.</p><br/>
 
+          <input type="radio" id="Joe" name="choice" value="Joe Biden"><label for="Joe">Joe Biden <img src="../images/Joe.jpg" height="200" width="200"/></label> 
+            <p>As a Senator from Delaware for 36 years, Senator Biden established himself as a leader on some of our nation's most important domestic and international challenges. As Chairman or Ranking Member of the Senate Judiciary Committee for 17 years, then-Senator Biden was widely recognized for his work on criminal justice issues including the landmark 1994 Crime Bill and the Violence Against Women Act. Now, as the 47th Vice President of the United States, Joe Biden has continued his leadership on important issues facing the nation. </p><br/>
 
-          <input type="button" onclick="voteFunc()" value="Vote!">
+          <input type="radio" id="Waka" name="choice" value="Waka Flocka Flame"> <label for="Waka">Waka Flocka Flame <img src="../images/Waka.jpg" height="200" width="200"/>  </label> 
+            <p>Waka Flocka, also known as Waka Flocka Flame, is a Southern rapper associated with Gucci Mane and his So Icey Entertainment enterprise. Born Juaquin Malphurs on May 31, 1986, in Jamaica, Queens, New York, he moved to Riverdale, Georgia, at age nine and later based himself in Atlanta, Georgia, where he launched his rap career. On April 20, 2015, Waka Flocka announced his candidacy for a U.S. Presidential run in 2016, via a video exclusive for Rolling Stone, in which he showed off a signed document to prove that he's serious. If he wins, the rapper says he will legalize marijuana, outlaw dogs (and other animals) in restaurants, and ban people with big feet from using the sidewalk.</p> <br/>
+          
+          <input type="radio" id="Write" name="choice" value="Write in"><label for="Write">Write in</label> <input name="name" type="text" placeholder="Check the write-in bubble, then type the name here"/>
+          
+          <input type="radio" id="Nope" name="choice" value="No Confidence"><label for="Nope"> No Confidence </label><br/>
+
+          <input id="vote" class="button" type="button" onclick="voteFunc()" value="Vote!">
       </fieldset>
     </form>   
    
@@ -48,15 +53,6 @@
             <p>© Copyright: uVote. All rights reserved</p>
             <p>By: Peter Matla, Zach Minster, Conrad Tyson, David Ivey</p>
           </div>
-          <div class="large-6 columns">
-            <ul class="inline-list right">
-              <li><a href="#">Link 1</a></li>
-              <li><a href="#">Link 2</a></li>
-              <li><a href="#">Link 3</a></li>
-              <li><a href="#">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
       </div>
     </footer>
 
@@ -67,17 +63,23 @@
     <script type="text/javascript">
     function voteFunc() {
       var choice = $('input[name=choice]:checked', '#voteForm').val();
-      if (choice == "Write in") {
-        choice = $('input[name=name]', '#voteForm').val();
-      }
 
-      if (choice == "") {
-        alert("Please Fill in the Text area with your Write In");
+      if (choice == undefined) {
+        alert('Please Choose a Candidate or select the "No Confidence" Option');
       }
       else {
-        var result = confirm("Are you sure you want to vote for " + choice + "?")
-        if (result == true) {
-          window.location.assign("./thankYou.html");
+        if (choice == "Write in") {
+          choice = $('input[name=name]', '#voteForm').val();
+        }
+
+        if (choice == "") {
+          alert("Please Fill in the Text area with your Write In");
+        }
+        else {
+          var result = confirm("Are you sure you want to vote for " + choice + "?")
+          if (result == true) {
+            window.location.assign("./thankYou.html");
+          }
         }
       }
     }
